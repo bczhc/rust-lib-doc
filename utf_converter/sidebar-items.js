@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main",""],["unicode_to_utf16_machine_endianness","returns: bytes size"],["unicode_to_utf16_reversed_machine_endianness","returns: bytes size"],["unicode_to_utf32_machine_endianness",""],["unicode_to_utf32_reversed_machine_endianness",""],["unicode_to_utf8","returns: bytes size"]],"struct":[["Main",""]]});

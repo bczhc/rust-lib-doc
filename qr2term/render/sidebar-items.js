@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Color","The color of a module."]],"struct":[["Renderer","QR barcode terminal renderer intended for terminals."]]});

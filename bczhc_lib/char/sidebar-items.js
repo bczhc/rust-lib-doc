@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["han_char_range","Return if a character is a Han character."]],"struct":[["CharReader","Examples"]],"trait":[["CharsTrait",""]]});

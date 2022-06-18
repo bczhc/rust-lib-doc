@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["reflink","Copies a file using COW semantics."],["reflink_or_copy","Attempts to reflink a file. If the operation fails, a conventional copy operation is attempted as a fallback."]]});

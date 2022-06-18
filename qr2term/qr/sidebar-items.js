@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Qr","Raw QR code."]]});

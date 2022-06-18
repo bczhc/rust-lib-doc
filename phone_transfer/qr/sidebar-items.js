@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["print_addr_qr",""]]});

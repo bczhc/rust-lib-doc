@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="size_format"><meta name="keywords" content="rust, rustlang, rust-lang, size_format"><title>size_format - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../dark.css" disabled><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../storage.js"></script><script src="../crates.js"></script><script defer src="../main.js"></script>
+    <noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../size_format/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../size_format/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"><a href="#">Crate size_format</a></h2><div class="sidebar-elems"><div class="block"><ul><li class="version">Version 1.0.2</li><li><a id="all-types" href="all.html">All Items</a></li></ul></div><section><div class="block"><ul><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li><li><a href="#types">Type Definitions</a></li></ul></div></section><div id="sidebar-vars" data-name="size_format" data-ty="mod" data-relpath=""></div><script defer src="sidebar-items.js"></script></div></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../size_format/index.html"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><div id="settings-menu" tabindex="-1">
+                                <a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div>
+                        </div></form></nav></div><section id="main-content" class="content"><div class="main-heading">
+    <h1 class="fqn"><span class="in-band">Crate <a class="mod" href="#">size_format</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></span></h1><span class="out-of-band"><a class="srclink" href="../src/size_format/lib.rs.html#1-478">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="size_format"><a href="#size_format">size_format</a></h2>
+<p>This crate provides formatting for sizes.</p>
+<p>The main goal is to provide easy formatters for data sizes.</p>
+<p>It provides both binary and SI unit prefixes per default, though more could be added.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">size_format</span>::{<span class="ident">SizeFormatterBinary</span>, <span class="ident">SizeFormatterSI</span>};
+
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}B&quot;</span>, <span class="ident">SizeFormatterBinary::new</span>(<span class="number">42</span> <span class="op">*</span> <span class="number">1024</span> <span class="op">*</span> <span class="number">1024</span>)),
+    <span class="string">&quot;42.0MiB&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}B&quot;</span>, <span class="ident">SizeFormatterSI::new</span>(<span class="number">42_000_000</span>)),
+    <span class="string">&quot;42.0MB&quot;</span>.<span class="ident">to_string</span>()
+);</code></pre></div>
+<p>The precision can also be specified. Please note that values are always rounded down.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">size_format::SizeFormatterSI</span>;
+
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{:.4}B&quot;</span>, <span class="ident">SizeFormatterSI::new</span>(<span class="number">1_999_999_999</span>)),
+    <span class="string">&quot;1.9999GB&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{:.0}B&quot;</span>, <span class="ident">SizeFormatterSI::new</span>(<span class="number">1_999_999_999</span>)),
+    <span class="string">&quot;1GB&quot;</span>.<span class="ident">to_string</span>()
+);</code></pre></div>
+<p>The presented precision will also never exceed the available precision.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">size_format::SizeFormatterSI</span>;
+
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{:.10}B&quot;</span>, <span class="ident">SizeFormatterSI::new</span>(<span class="number">678</span>)),
+    <span class="string">&quot;678B&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{:.10}B&quot;</span>, <span class="ident">SizeFormatterSI::new</span>(<span class="number">1_999</span>)),
+    <span class="string">&quot;1.999kB&quot;</span>.<span class="ident">to_string</span>()
+);</code></pre></div>
+<p>For more flexibility, use the <code>SizeFormatter</code> type directly with the correct type parameters.
+For example the following code formats a <code>u16</code> using binary prefixes and uses a comma as a separator.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">size_format</span>::{<span class="ident">BinaryPrefixes</span>, <span class="ident">CommaSeparated</span>, <span class="ident">SizeFormatter</span>};
+
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{:.2}B&quot;</span>, <span class="ident">SizeFormatter</span>::<span class="op">&lt;</span><span class="ident">u16</span>, <span class="ident">BinaryPrefixes</span>, <span class="ident">CommaSeparated</span><span class="op">&gt;</span><span class="ident">::from</span>(<span class="number">65_535u16</span>)),
+    <span class="string">&quot;63,99KiB&quot;</span>.<span class="ident">to_string</span>()
+);</code></pre></div>
+<p>Although this crate was mainly intended for data sizes, it can also be used for other units.</p>
+<p>It is also possible to implement the <code>PrefixType</code> trait to make your own prefix system.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">generic_array</span>;
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">size_format</span>;
+
+<span class="kw">use</span> <span class="ident">size_format</span>::{<span class="ident">PointSeparated</span>, <span class="ident">PrefixType</span>, <span class="ident">SizeFormatter</span>};
+<span class="kw">use</span> <span class="ident">generic_array</span>::{<span class="ident">typenum::U3</span>, <span class="ident">GenericArray</span>};
+
+<span class="kw">struct</span> <span class="ident">Millimeter</span>;
+
+<span class="kw">impl</span> <span class="ident">PrefixType</span> <span class="kw">for</span> <span class="ident">Millimeter</span> {
+    <span class="kw">type</span> <span class="ident">N</span> <span class="op">=</span> <span class="ident">U3</span>;
+
+    <span class="kw">const</span> <span class="ident">PREFIX_SIZE</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">1000</span>;
+
+    <span class="kw">fn</span> <span class="ident">prefixes</span>() -&gt; <span class="ident">GenericArray</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident"><span class="self">Self</span>::N</span><span class="op">&gt;</span> {
+        [<span class="string">&quot;m&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;k&quot;</span>].<span class="ident">into</span>()
+    }
+}
+
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}m&quot;</span>, <span class="ident">SizeFormatter</span>::<span class="op">&lt;</span><span class="ident">u32</span>, <span class="ident">Millimeter</span>, <span class="ident">PointSeparated</span><span class="op">&gt;</span><span class="ident">::new</span>(<span class="number">1</span>)),
+    <span class="string">&quot;1mm&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}m&quot;</span>, <span class="ident">SizeFormatter</span>::<span class="op">&lt;</span><span class="ident">u32</span>, <span class="ident">Millimeter</span>, <span class="ident">PointSeparated</span><span class="op">&gt;</span><span class="ident">::new</span>(<span class="number">1_000</span>)),
+    <span class="string">&quot;1.0m&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}m&quot;</span>, <span class="ident">SizeFormatter</span>::<span class="op">&lt;</span><span class="ident">u32</span>, <span class="ident">Millimeter</span>, <span class="ident">PointSeparated</span><span class="op">&gt;</span><span class="ident">::new</span>(<span class="number">1_000_000</span>)),
+    <span class="string">&quot;1.0km&quot;</span>.<span class="ident">to_string</span>()
+);
+<span class="macro">assert_eq!</span>(
+    <span class="macro">format!</span>(<span class="string">&quot;{}m&quot;</span>, <span class="ident">SizeFormatter</span>::<span class="op">&lt;</span><span class="ident">u64</span>, <span class="ident">Millimeter</span>, <span class="ident">PointSeparated</span><span class="op">&gt;</span><span class="ident">::new</span>(<span class="number">10_000_000_000</span>)),
+    <span class="string">&quot;10000.0km&quot;</span>.<span class="ident">to_string</span>()
+);</code></pre></div>
+</div></details><h2 id="structs" class="small-section-header"><a href="#structs">Structs</a></h2>
+<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.BinaryPrefixes.html" title="size_format::BinaryPrefixes struct">BinaryPrefixes</a></div><div class="item-right docblock-short"><p>Represents the prefixes used for display file sizes using powers of 1024.</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.CommaSeparated.html" title="size_format::CommaSeparated struct">CommaSeparated</a></div><div class="item-right docblock-short"><p>Represents a comma separation scheme for numbers (‘,’).</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.PointSeparated.html" title="size_format::PointSeparated struct">PointSeparated</a></div><div class="item-right docblock-short"><p>Represents a point or dot separation scheme for numbers (‘.’).</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.SIPrefixes.html" title="size_format::SIPrefixes struct">SIPrefixes</a></div><div class="item-right docblock-short"><p>Represents the prefixes used in the SI system of measurements.</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.SizeFormatter.html" title="size_format::SizeFormatter struct">SizeFormatter</a></div><div class="item-right docblock-short"><p>Represents a size that can be formatted.</p>
+</div></div></div><h2 id="traits" class="small-section-header"><a href="#traits">Traits</a></h2>
+<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.DecimalSeparator.html" title="size_format::DecimalSeparator trait">DecimalSeparator</a></div><div class="item-right docblock-short"><p>A trait for marker types that represent decimal separators.</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.PrefixType.html" title="size_format::PrefixType trait">PrefixType</a></div><div class="item-right docblock-short"><p>Abstracts over the types of prefixes possible.</p>
+</div></div></div><h2 id="types" class="small-section-header"><a href="#types">Type Definitions</a></h2>
+<div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="type" href="type.SizeFormatterBinary.html" title="size_format::SizeFormatterBinary type">SizeFormatterBinary</a></div><div class="item-right docblock-short"><p>Implements <code>Display</code> to format the contained byte size using binary prefixes.</p>
+</div></div><div class="item-row"><div class="item-left module-item"><a class="type" href="type.SizeFormatterSI.html" title="size_format::SizeFormatterSI type">SizeFormatterSI</a></div><div class="item-right docblock-short"><p>Implements <code>Display</code> to format the contained byte size using SI prefixes.</p>
+</div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="size_format" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.63.0-nightly (c3b7d7b49 2022-06-17)" ></div>
+</body></html>

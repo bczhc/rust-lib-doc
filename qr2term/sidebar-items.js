@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["QrError","`QrError` encodes the error encountered when generating a QR code."]],"fn":[["generate_qr_string","Generate `String` from the given `data` as QR code."],["print_qr","Print the given `data` as QR code in the terminal."]],"mod":[["matrix","Matrix types representing 2D barcode."],["qr","QR code type."],["render","Rendering utilities."]]});

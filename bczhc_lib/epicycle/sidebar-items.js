@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Epicycle","Struct for an epicycle in Fourier series"]]});

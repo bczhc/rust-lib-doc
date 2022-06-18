@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["fourier_series_calc",""]],"struct":[["LinearPath",""],["TimePath",""]],"trait":[["EvaluatePath",""]]});

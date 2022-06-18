@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Matrix","A square 2D matrix representing a barcode."]]});

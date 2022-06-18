@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Error",""],["ParseError",""]],"fn":[["main",""],["open_repo_including_parents",""],["print_frequency",""],["read_options",""]],"struct":[["Options",""]],"type":[["MyResult",""]]});

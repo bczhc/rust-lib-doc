@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Lazy","Variable lazy delegate"]]});

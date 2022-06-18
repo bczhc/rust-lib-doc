@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Point",""]],"type":[["PointF64",""],["PointI32",""],["PointU32",""]]});

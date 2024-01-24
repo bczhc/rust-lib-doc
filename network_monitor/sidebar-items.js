@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["interfaces_list"],"mod":["cli"]};

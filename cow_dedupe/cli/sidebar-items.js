@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["HashFn","OutputFormat","Subcommands","YesNoChoice"],"struct":["CliConfig","CommonArgs","DedupeArgs","GroupArgs"]};

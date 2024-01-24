@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Boole","LeftRectangle","RightRectangle","Simpson","Simpson38","Trapezoid"],"trait":["Integrate"]};

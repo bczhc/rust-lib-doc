@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Endianness"],"fn":["get_endianness"]};

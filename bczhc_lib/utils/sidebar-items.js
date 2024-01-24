@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MsgType"],"fn":["get_args_without_self_path","get_file_name"],"struct":["MsgPrinter","Pair"]};

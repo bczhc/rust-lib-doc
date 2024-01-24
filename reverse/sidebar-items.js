@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ReverseMode"],"fn":["main","reverse_string"]};

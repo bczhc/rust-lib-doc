@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["main","send_dir","send_file","send_text"]};

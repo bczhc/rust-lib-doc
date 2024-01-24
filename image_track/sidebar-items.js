@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["HEADER","HEAD_INFO_SIZE","SECTOR_SIZE"],"fn":["open_image","pad_sector"],"mod":["add","create","info","new"],"struct":["ImageInfo","Track"],"type":["AnyResult"]};

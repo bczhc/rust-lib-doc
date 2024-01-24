@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MsgType","ShuffleMode"],"fn":["main","show_msg","shuffle_string"]};

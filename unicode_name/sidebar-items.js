@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["char_encoded_string","char_utf32_string"],"mod":["cli"],"static":["CONFIG"],"struct":["CharInfo","CharInfoIter","Config"]};

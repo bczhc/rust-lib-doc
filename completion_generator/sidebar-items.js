@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["CLI_BUILDERS"],"fn":["print_completions"],"mod":["cli"],"static":["BIN_NAMES"]};

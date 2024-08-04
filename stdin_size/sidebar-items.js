@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MsgType"],"fn":["main","show_msg"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["attach_tcp_stream_to_stdio","interact_two_streams","pipe_thread","put_c_char","put_char"],"mod":["duplicator","errors","unix"],"struct":["Lines"],"trait":["OpenOrCreate","Poll","ReadAll","ReadLines","ReadText","Skip","TryReadExact"]};

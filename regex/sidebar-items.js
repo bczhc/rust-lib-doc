@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Engine","RetErr"],"fn":["main"],"struct":["PcreRegex","RustRegex"],"trait":["Regex"],"type":["RetErrType"]};

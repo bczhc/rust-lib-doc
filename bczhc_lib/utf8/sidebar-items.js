@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["decode_utf8","decode_utf8_with_length","encode_utf8","surrogate_pair_to_unicode","unicode_to_surrogate_pair","utf8_bytes_length","utf8_size"],"struct":["SolvedUtf8Properties","Surrogate"]};

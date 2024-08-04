@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Level"],"fn":["create_compressor","create_decompressor"],"struct":["BrotliDecompressor","Bzip2Compressor","Bzip2Decompressor","Bzip3Decompressor","ExternalFilter","GzipCompressor","GzipDecompressor","NoCompressor","NoDecompressor","XzCompressor","XzDecompressor","ZstdCompressor","ZstdDecompressor"],"trait":["Compress","Decompress"]};

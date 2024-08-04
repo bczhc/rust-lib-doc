@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Mode"],"fn":["definite_integral_rayon","fourier_series_evaluate","linear_interpolate","trig_fourier_series_calc"],"mod":["cli"],"struct":["Config","SeriesCoefficient"]};
